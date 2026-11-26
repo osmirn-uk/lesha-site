@@ -3,89 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ANTILAG — Birmingham Drum &amp; Bass Producer &amp; Sound Designer</title>
-  <meta name="description" content="Official portfolio and audio archive of ANTILAG — Birmingham UK drum &amp; bass, jungle, and dubplate producer." />
+  <title>ANTILAG — SYS // ANTILAG.UK | 175 BPM Birmingham UK</title>
+  <meta name="description" content="SYS // ANTILAG.UK — Birmingham UK Drum & Bass / Jungle Producer, Sound Designer & Dubplate Vault." />
 
-  <!-- Google Fonts: Inter & JetBrains Mono for technical telemetry readouts -->
+  <!-- Industrial Condensed Display + Technical Monospace Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;1,700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
-       1. DESIGN TOKENS & DARK SLATE PALETTE
+       1. OBSIDIAN INDUSTRIAL TELEMETRY DESIGN TOKENS
        ========================================================================== */
     :root {
-      --bg-base: #0b0f17;
-      --bg-surface: #111827;
-      --bg-surface-elevated: #1e293b;
-      --bg-glass: rgba(11, 15, 23, 0.84);
+      --bg-obsidian: #060709;
+      --bg-panel: #0b0d11;
+      --bg-card: #12151c;
+      --bg-card-hover: #171b24;
+      --bg-input: #080a0e;
 
-      --border-subtle: #1e293b;
-      --border-default: #334155;
-      --border-highlight: #475569;
+      --border-grid: #1d222d;
+      --border-strong: #2d3546;
 
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
+      --text-primary: #f4f4f6;
+      --text-secondary: #a1aab8;
+      --text-muted: #64748b;
+      --text-dim: #475569;
 
-      /* Motorsport Telemetry Accents */
-      --accent-amber: #f59e0b;
-      --accent-amber-soft: rgba(245, 158, 11, 0.12);
-      --accent-amber-glow: rgba(245, 158, 11, 0.28);
+      --accent-amber: #ff5500;
+      --accent-amber-bright: #ff9e00;
+      --accent-amber-dim: rgba(255, 85, 0, 0.14);
+      --accent-amber-glow: rgba(255, 85, 0, 0.35);
 
-      --accent-cyan: #38bdf8;
-      --accent-cyan-soft: rgba(56, 189, 248, 0.12);
-      --accent-cyan-glow: rgba(56, 189, 248, 0.25);
+      --accent-green: #10b981;
+      --accent-green-dim: rgba(16, 185, 129, 0.14);
+      --accent-green-glow: rgba(16, 185, 129, 0.4);
 
-      --status-online: #10b981;
+      --accent-red: #ef4444;
 
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-pill: 9999px;
-
-      --container-max: 1140px;
-      --transition-smooth: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      --font-display: 'Chakra Petch', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
     }
 
     /* ==========================================================================
-       2. RESET & BASE STYLES
+       2. RESET & SCANLINE / NOISE TEXTURE OVERLAY
        ========================================================================== */
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg-base);
+    html, body {
+      min-height: 100vh;
+      background-color: var(--bg-obsidian);
       color: var(--text-primary);
-      font-family: var(--font-sans);
-      line-height: 1.6;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      background-color: var(--bg-base);
-      /* Subtle industrial telemetry grid & radial glow */
-      background-image:
-        radial-gradient(circle at 80% 10%, rgba(56, 189, 248, 0.06) 0%, transparent 45%),
-        radial-gradient(circle at 15% 30%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
-        linear-gradient(to right, rgba(30, 41, 59, 0.24) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(30, 41, 59, 0.24) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
-      background-position: center top;
+    /* Subtle CRT scanline + telemetry micro-grid texture */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.14) 0px,
+          rgba(0, 0, 0, 0.14) 1px,
+          transparent 1px,
+          transparent 3px
+        ),
+        radial-gradient(circle at 50% 0%, rgba(255, 85, 0, 0.04), transparent 65%);
+    }
+
+    button, input, textarea {
+      font-family: var(--font-mono);
+      color: inherit;
+      background: none;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
     }
 
     a {
@@ -93,215 +100,230 @@
       text-decoration: none;
     }
 
-    ul {
-      list-style: none;
+    /* Screen micro-shake during Antilag Limiter Bangs */
+    @keyframes antilag-shake {
+      0%, 100% { transform: translate(0, 0); }
+      20% { transform: translate(-2px, 1px); }
+      40% { transform: translate(2px, -1px); }
+      60% { transform: translate(-1px, -2px); }
+      80% { transform: translate(2px, 2px); }
     }
 
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .mono {
-      font-family: var(--font-mono);
+    .app-shell.limiter-active {
+      animation: antilag-shake 0.12s infinite;
     }
 
     /* ==========================================================================
-       3. STICKY NAVIGATION BAR
+       3. TOP SYSTEM TELEMETRY BAR
        ========================================================================== */
-    .navbar {
+    .topbar {
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: var(--bg-glass);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-subtle);
-      transition: var(--transition-smooth);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      min-height: 46px;
+      background-color: rgba(6, 7, 9, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-grid);
     }
 
-    .navbar-inner {
+    .topbar-brand {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 4.25rem;
-      gap: 1rem;
-    }
-
-    .brand-link {
-      display: inline-flex;
-      align-items: center;
       gap: 0.6rem;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
+      height: 100%;
+      padding: 0 1.25rem;
+      border-right: 1px solid var(--border-grid);
       font-weight: 700;
+      font-size: 0.78rem;
       letter-spacing: 0.08em;
       color: var(--text-primary);
-      transition: var(--transition-smooth);
+      transition: background-color 0.2s, color 0.2s;
     }
 
-    .brand-link:hover {
+    .topbar-brand:hover {
+      background-color: var(--bg-panel);
       color: var(--accent-amber);
     }
 
-    .brand-slash {
+    .topbar-brand .slash {
       color: var(--accent-amber);
     }
 
-    /* Telemetry Status Badge */
-    .status-badge {
+    .topbar-telemetry {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.75rem;
+      padding: 0.4rem 1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      color: var(--text-secondary);
+    }
+
+    .tele-item {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.8rem;
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-pill);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: var(--text-secondary);
+      gap: 0.45rem;
       white-space: nowrap;
+    }
+
+    .tele-label {
+      color: var(--text-muted);
+    }
+
+    .tele-val {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .tele-booking-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.22rem 0.6rem;
+      background-color: var(--accent-green-dim);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: var(--accent-green);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      transition: all 0.2s ease;
+    }
+
+    .tele-booking-btn:hover {
+      background-color: rgba(16, 185, 129, 0.24);
+      border-color: var(--accent-green);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
     }
 
     .status-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background-color: var(--status-online);
-      box-shadow: 0 0 8px var(--status-online);
-      animation: pulse-dot 2.2s infinite ease-in-out;
+      background-color: var(--accent-green);
+      box-shadow: 0 0 8px var(--accent-green);
+      animation: pulse-green 1.8s infinite ease-in-out;
     }
 
-    @keyframes pulse-dot {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.45;
-        transform: scale(0.85);
-      }
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
     }
 
-    .nav-links {
-      display: flex;
+    .topbar-vault-btn {
+      display: inline-flex;
       align-items: center;
-      gap: 1.75rem;
-    }
-
-    .nav-link {
-      position: relative;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      padding: 0.35rem 0;
-      transition: color 0.2s ease;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background-color: var(--accent-amber);
-      border-radius: 2px;
-      transition: width 0.25s ease;
-    }
-
-    .nav-link:hover {
+      gap: 0.55rem;
+      height: 100%;
+      padding: 0 1.25rem;
+      border-left: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
       color: var(--text-primary);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: all 0.2s ease;
     }
 
-    .nav-link:hover::after {
-      width: 100%;
+    .topbar-vault-btn:hover {
+      background-color: var(--accent-amber);
+      color: #060709;
+    }
+
+    .topbar-vault-btn.unlocked {
+      background-color: var(--accent-green-dim);
+      color: var(--accent-green);
+      border-left-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .topbar-vault-btn.unlocked:hover {
+      background-color: var(--accent-green);
+      color: #060709;
     }
 
     /* ==========================================================================
-       4. HERO SECTION
+       4. MAIN SPLIT-GRID COCKPIT LAYOUT
        ========================================================================== */
-    .hero {
-      padding: 6rem 0 5rem;
-      border-bottom: 1px solid var(--border-subtle);
-      position: relative;
-    }
-
-    .hero-grid {
+    .cockpit-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      align-items: center;
+      grid-template-columns: minmax(360px, 44%) 1fr;
+      min-height: calc(100vh - 46px);
+      max-width: 1600px;
+      margin: 0 auto;
+      border-left: 1px solid var(--border-grid);
+      border-right: 1px solid var(--border-grid);
     }
 
-    .telemetry-strip {
+    /* LEFT COLUMN */
+    .left-column {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin-bottom: 1.75rem;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
     }
 
-    .telemetry-tag {
+    .brand-hero-block {
+      padding: 2rem 1.75rem 1.75rem;
+      border-bottom: 1px solid var(--border-grid);
+    }
+
+    .brand-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .snippet-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.38rem 0.75rem;
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      gap: 0.4rem;
+      padding: 0.2rem 0.55rem;
+      background-color: var(--accent-amber-dim);
+      border: 1px solid rgba(255, 85, 0, 0.45);
+      color: var(--accent-amber-bright);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .uk-clock-readout {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       color: var(--text-secondary);
-      transition: var(--transition-smooth);
+      background-color: var(--bg-obsidian);
+      border: 1px solid var(--border-grid);
+      padding: 0.22rem 0.6rem;
     }
 
-    .telemetry-tag:hover {
-      border-color: var(--border-highlight);
-      background-color: var(--bg-surface-elevated);
-      transform: translateY(-1px);
-    }
-
-    .telemetry-tag .tag-accent-amber {
-      color: var(--accent-amber);
-    }
-
-    .telemetry-tag .tag-accent-cyan {
-      color: var(--accent-cyan);
-    }
-
-    .hero-title {
-      font-size: clamp(3.4rem, 10vw, 6.75rem);
-      font-weight: 900;
-      line-height: 0.94;
-      letter-spacing: -0.04em;
-      color: var(--text-primary);
+    .giant-wordmark {
+      font-family: var(--font-display);
+      font-size: clamp(3.8rem, 7vw, 6.2rem);
+      font-weight: 700;
+      line-height: 0.88;
+      letter-spacing: -0.03em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+      margin: 0.35rem 0 0.9rem;
       display: flex;
       align-items: baseline;
-      gap: 0.5rem;
+      gap: 0.35rem;
+      user-select: none;
     }
 
-    .hero-title-cursor {
+    .wordmark-cursor {
       display: inline-block;
       width: 0.14em;
-      height: 0.78em;
+      height: 0.76em;
       background-color: var(--accent-amber);
-      border-radius: 2px;
-      animation: blink 1.15s step-end infinite;
+      animation: blink 1s step-end infinite;
     }
 
     @keyframes blink {
@@ -309,944 +331,2618 @@
       50% { opacity: 0; }
     }
 
-    .hero-subtitle {
-      font-size: clamp(1.125rem, 2.3vw, 1.45rem);
-      font-weight: 500;
-      color: var(--text-secondary);
-      max-width: 640px;
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .hero-description {
-      font-size: 1rem;
-      color: var(--text-muted);
-      max-width: 580px;
-      margin-bottom: 2.25rem;
-    }
-
-    .hero-actions {
+    .brand-subline {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* INDEXED LINK DIRECTORY (01 - 04) */
+    .directory-nav {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--border-grid);
+    }
+
+    .dir-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.05rem 1.75rem;
+      border-bottom: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
+      transition: all 0.18s ease;
+      text-align: left;
+      width: 100%;
+    }
+
+    .dir-item:last-child {
+      border-bottom: none;
+    }
+
+    .dir-item:hover {
+      background-color: var(--bg-card-hover);
+      padding-left: 2.1rem;
+    }
+
+    .dir-item-left {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+    }
+
+    .dir-index {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--accent-amber);
+      letter-spacing: 0.08em;
+    }
+
+    .dir-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+    }
+
+    .dir-item:hover .dir-label {
+      color: var(--accent-amber-bright);
+    }
+
+    .dir-arrow {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .dir-item:hover .dir-arrow {
+      color: var(--accent-amber);
+      transform: translate(3px, -2px);
+    }
+
+    /* ==========================================================================
+       5. INTERACTIVE TURBO BOOST / ANTILAG TELEMETRY GAUGE
+       ========================================================================== */
+    .turbo-module {
+      padding: 1.5rem 1.75rem;
+      background-color: var(--bg-obsidian);
+      display: flex;
+      flex-direction: column;
       gap: 1rem;
     }
 
-    .btn {
-      display: inline-flex;
+    .turbo-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .turbo-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .sfx-toggle-btn {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
+      color: var(--text-secondary);
+      letter-spacing: 0.06em;
+      transition: all 0.18s ease;
+    }
+
+    .sfx-toggle-btn.active {
+      border-color: rgba(255, 85, 0, 0.5);
+      color: var(--accent-amber-bright);
+      background-color: var(--accent-amber-dim);
+    }
+
+    .turbo-readout-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .boost-digital {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .boost-number {
+      font-family: var(--font-display);
+      font-size: 3.1rem;
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      font-variant-numeric: tabular-nums;
+      transition: color 0.15s ease;
+    }
+
+    .boost-number.spooling {
+      color: var(--accent-amber-bright);
+    }
+
+    .boost-number.redline {
+      color: var(--accent-amber);
+      text-shadow: 0 0 18px var(--accent-amber-glow);
+    }
+
+    .boost-unit {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .turbo-status-pill {
+      padding: 0.3rem 0.65rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
+      color: var(--text-secondary);
+      text-align: right;
+    }
+
+    .turbo-status-pill.spooling {
+      border-color: rgba(255, 158, 0, 0.5);
+      color: var(--accent-amber-bright);
+      background-color: rgba(255, 158, 0, 0.1);
+    }
+
+    .turbo-status-pill.antilag {
+      border-color: var(--accent-amber);
+      color: #060709;
+      background-color: var(--accent-amber);
+      box-shadow: 0 0 16px var(--accent-amber-glow);
+    }
+
+    /* Segmented 22-bar Boost Pressure Meter (0.0 -> 2.2 BAR) */
+    .boost-meter-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .boost-segments {
+      display: grid;
+      grid-template-columns: repeat(22, 1fr);
+      gap: 3px;
+      height: 22px;
+      padding: 3px;
+      background-color: var(--bg-panel);
+      border: 1px solid var(--border-grid);
+    }
+
+    .boost-seg {
+      background-color: #181d27;
+      transition: background-color 0.05s linear, box-shadow 0.05s linear;
+    }
+
+    .boost-seg.lit-low {
+      background-color: var(--accent-green);
+    }
+
+    .boost-seg.lit-mid {
+      background-color: var(--accent-amber-bright);
+    }
+
+    .boost-seg.lit-high {
+      background-color: var(--accent-amber);
+      box-shadow: 0 0 8px var(--accent-amber);
+    }
+
+    .boost-scale {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    .spool-trigger-btn {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      color: var(--text-primary);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
-      padding: 0.85rem 1.5rem;
-      border-radius: var(--radius-md);
-      font-size: 0.925rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      transition: var(--transition-smooth);
+      user-select: none;
+      touch-action: manipulation;
+      transition: all 0.15s ease;
     }
 
-    .btn-primary {
+    .spool-trigger-btn:hover {
+      border-color: var(--accent-amber);
+      background-color: var(--bg-card-hover);
+    }
+
+    .spool-trigger-btn.active {
       background-color: var(--accent-amber);
-      color: #0b0f17;
-      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.22);
+      border-color: var(--accent-amber-bright);
+      color: #060709;
+      box-shadow: 0 0 24px var(--accent-amber-glow);
     }
 
-    .btn-primary:hover {
-      background-color: #fbbf24;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(245, 158, 11, 0.35);
+    .spool-hint {
+      font-size: 0.66rem;
+      color: var(--text-dim);
+      text-align: center;
+      letter-spacing: 0.05em;
     }
 
-    .btn-secondary {
-      background-color: var(--bg-surface);
-      color: var(--text-primary);
-      border: 1px solid var(--border-default);
-    }
-
-    .btn-secondary:hover {
-      background-color: var(--bg-surface-elevated);
-      border-color: var(--accent-cyan);
-      color: var(--text-primary);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.14);
-    }
-
-    .btn-icon {
-      transition: transform 0.25s ease;
-    }
-
-    .btn:hover .btn-icon {
-      transform: translateX(3px);
-    }
-
-    /* Interactive Telemetry Visualizer Strip inside Hero */
-    .telemetry-panel {
-      margin-top: 3.5rem;
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem 1.5rem;
+    /* ==========================================================================
+       6. RIGHT COLUMN — AUDIO ARCHIVE // PUBLIC TRACKS & SYNTH DECK
+       ========================================================================== */
+    .right-column {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      background-color: var(--bg-obsidian);
+    }
+
+    .archive-header {
+      display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 1.1rem 1.75rem;
+      border-bottom: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
+    }
+
+    .archive-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .archive-title .dot-amber {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-amber);
+    }
+
+    .archive-counter {
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent-amber-bright);
+      background-color: var(--bg-obsidian);
+      border: 1px solid var(--border-grid);
+      padding: 0.22rem 0.65rem;
+    }
+
+    /* ACTIVE DECK / WAVEFORM VISUALIZER */
+    .deck-panel {
+      padding: 1.5rem 1.75rem;
+      border-bottom: 1px solid var(--border-grid);
+      background: linear-gradient(180deg, #0d1016 0%, #08090d 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .deck-top-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .deck-now-playing {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .deck-state-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent-amber);
+    }
+
+    .deck-track-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--text-primary);
+    }
+
+    .deck-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .deck-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.24rem 0.55rem;
+      border: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
+      color: var(--text-secondary);
+      letter-spacing: 0.06em;
+    }
+
+    .deck-pill.vip {
+      border-color: rgba(16, 185, 129, 0.45);
+      color: var(--accent-green);
+      background-color: var(--accent-green-dim);
+    }
+
+    /* Interactive Canvas Waveform & Scrubbing Bar */
+    .waveform-container {
+      position: relative;
+      height: 84px;
+      background-color: var(--bg-panel);
+      border: 1px solid var(--border-grid);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    #waveform-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .deck-controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .transport-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ctrl-btn {
+      height: 36px;
+      padding: 0 0.9rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      color: var(--text-primary);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.16s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: var(--accent-amber);
+      background-color: var(--bg-card-hover);
+    }
+
+    .ctrl-btn.play-primary {
+      background-color: var(--accent-amber);
+      border-color: var(--accent-amber);
+      color: #060709;
+      min-width: 108px;
+    }
+
+    .ctrl-btn.play-primary:hover {
+      background-color: var(--accent-amber-bright);
+    }
+
+    .time-and-vol {
+      display: flex;
+      align-items: center;
       gap: 1.25rem;
     }
 
-    .telemetry-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
+    .time-readout {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.06em;
+      font-variant-numeric: tabular-nums;
     }
 
-    .metric-item {
+    .vol-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    .vol-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 82px;
+      height: 4px;
+      background: var(--border-strong);
+      cursor: pointer;
+    }
+
+    .vol-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background: var(--accent-amber);
+      cursor: pointer;
+    }
+
+    /* TRACKLIST ROWS */
+    .tracklist-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .track-row {
+      display: grid;
+      grid-template-columns: 44px 1fr auto auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.05rem 1.75rem;
+      border-bottom: 1px solid var(--border-grid);
+      background-color: var(--bg-obsidian);
+      transition: background-color 0.16s ease;
+      cursor: pointer;
+    }
+
+    .track-row:hover {
+      background-color: var(--bg-panel);
+    }
+
+    .track-row.active {
+      background-color: var(--bg-card);
+      border-left: 3px solid var(--accent-amber);
+      padding-left: calc(1.75rem - 3px);
+    }
+
+    .track-play-icon {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-panel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .track-row.active .track-play-icon {
+      background-color: var(--accent-amber);
+      border-color: var(--accent-amber);
+      color: #060709;
+    }
+
+    .track-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.22rem;
+      min-width: 0;
+    }
+
+    .track-name {
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .track-row.active .track-name {
+      color: var(--accent-amber-bright);
+    }
+
+    .track-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .track-bpm-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      padding: 0.2rem 0.5rem;
+      border: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
+    }
+
+    .track-dur {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      min-width: 44px;
+      text-align: right;
+    }
+
+    /* Footer Spec Strip inside Right Column */
+    .archive-footer-note {
+      margin-top: auto;
+      padding: 1rem 1.75rem;
+      background-color: var(--bg-panel);
+      border-top: 1px solid var(--border-grid);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    /* ==========================================================================
+       7. MODALS (SYS // DUBPLATE VAULT & BOOKINGS // CONTACT)
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background-color: rgba(3, 4, 6, 0.86);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-window {
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background-color: var(--bg-panel);
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.4rem;
+      background-color: var(--bg-obsidian);
+      border-bottom: 1px solid var(--border-grid);
+    }
+
+    .modal-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .modal-close-btn {
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--border-grid);
+      background-color: var(--bg-panel);
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.16s ease;
+    }
+
+    .modal-close-btn:hover {
+      border-color: var(--accent-amber);
+      color: var(--accent-amber);
+    }
+
+    .modal-body {
+      padding: 1.5rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .vault-subtitle {
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+    }
+
+    /* Vault Locked State */
+    .vault-unlock-form {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .sys-input {
+      flex: 1;
+      background-color: var(--bg-input);
+      border: 1px solid var(--border-strong);
+      padding: 0.75rem 0.9rem;
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      letter-spacing: 0.06em;
+      transition: border-color 0.18s ease;
+    }
+
+    .sys-input:focus {
+      border-color: var(--accent-amber);
+    }
+
+    .sys-btn-amber {
+      padding: 0.75rem 1.25rem;
+      background-color: var(--accent-amber);
+      border: 1px solid var(--accent-amber);
+      color: #060709;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      transition: all 0.16s ease;
+    }
+
+    .sys-btn-amber:hover {
+      background-color: var(--accent-amber-bright);
+    }
+
+    .sys-btn-secondary {
+      padding: 0.65rem 1rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      color: var(--text-primary);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      transition: all 0.16s ease;
+    }
+
+    .sys-btn-secondary:hover {
+      border-color: var(--accent-amber);
+      color: var(--accent-amber-bright);
+    }
+
+    .vault-error-msg {
+      font-size: 0.72rem;
+      color: var(--accent-red);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      display: none;
+    }
+
+    .vault-error-msg.visible {
+      display: block;
+    }
+
+    .demo-keys-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--border-grid);
+      font-size: 0.69rem;
+      color: var(--text-muted);
+    }
+
+    .demo-chip {
+      padding: 0.22rem 0.55rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      color: var(--text-secondary);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .demo-chip:hover {
+      border-color: var(--accent-amber);
+      color: var(--accent-amber-bright);
+    }
+
+    /* Vault Unlocked Header & Tabs */
+    .vault-unlocked-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background-color: var(--accent-green-dim);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+
+    .access-granted-label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--accent-green);
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .vault-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-grid);
+      gap: 0.5rem;
+    }
+
+    .vault-tab-group {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .vault-tab-btn {
+      padding: 0.65rem 1rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.16s ease;
+    }
+
+    .vault-tab-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .vault-tab-btn.active {
+      color: var(--accent-amber-bright);
+      border-bottom-color: var(--accent-amber);
+    }
+
+    .lock-vault-btn {
+      padding: 0.4rem 0.75rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      color: var(--text-secondary);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+    }
+
+    .lock-vault-btn:hover {
+      border-color: var(--accent-red);
+      color: var(--accent-red);
+    }
+
+    /* Dubplate Track Cards inside Vault */
+    .dubplate-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .dubplate-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      padding: 0.9rem 1rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-grid);
+    }
+
+    .dubplate-item:hover {
+      border-color: var(--border-strong);
+    }
+
+    .dubplate-meta {
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
     }
 
-    .metric-label {
-      font-family: var(--font-mono);
+    .dubplate-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+    }
+
+    .dubplate-specs {
       font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-dim);
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
     }
 
-    .metric-value {
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .eq-bars {
+    .dubplate-actions {
       display: flex;
-      align-items: flex-end;
-      gap: 4px;
-      height: 28px;
-      padding: 0 0.25rem;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .eq-bar {
-      width: 4px;
-      background: linear-gradient(to top, var(--accent-cyan), var(--accent-amber));
-      border-radius: 2px;
-      animation: eq-bounce 1.2s ease-in-out infinite;
-    }
-
-    .eq-bar:nth-child(1) { height: 45%; animation-delay: 0.0s; }
-    .eq-bar:nth-child(2) { height: 90%; animation-delay: 0.2s; }
-    .eq-bar:nth-child(3) { height: 60%; animation-delay: 0.4s; }
-    .eq-bar:nth-child(4) { height: 100%; animation-delay: 0.1s; }
-    .eq-bar:nth-child(5) { height: 55%; animation-delay: 0.35s; }
-    .eq-bar:nth-child(6) { height: 80%; animation-delay: 0.15s; }
-    .eq-bar:nth-child(7) { height: 40%; animation-delay: 0.45s; }
-    .eq-bar:nth-child(8) { height: 75%; animation-delay: 0.25s; }
-
-    @keyframes eq-bounce {
-      0%, 100% { transform: scaleY(0.45); }
-      50% { transform: scaleY(1); }
-    }
-
-    /* ==========================================================================
-       5. SECTION SHARED HEADERS
-       ========================================================================== */
-    .section {
-      padding: 5.5rem 0;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-kicker {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-amber);
-      margin-bottom: 0.6rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.85rem, 4vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-    }
-
-    /* ==========================================================================
-       6. ABOUT SECTION
-       ========================================================================== */
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .about-copy {
+    /* ADMIN // KEYS PANEL */
+    .admin-panel {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
-      font-size: 1.05rem;
-      color: var(--text-secondary);
     }
 
-    .about-copy p {
-      line-height: 1.75;
-    }
-
-    .about-highlight {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    .specs-list {
+    .admin-form-box {
+      background-color: var(--bg-obsidian);
+      border: 1px solid var(--border-grid);
+      padding: 1.1rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.95rem;
     }
 
-    .spec-card {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-md);
-      padding: 1.25rem 1.4rem;
-      transition: var(--transition-smooth);
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
     }
 
-    .spec-card:hover {
-      border-color: var(--border-highlight);
-      background-color: var(--bg-surface-elevated);
-      transform: translateX(4px);
-    }
-
-    .spec-header {
+    .field-label-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 0.45rem;
     }
 
-    .spec-title {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .spec-code {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--accent-cyan);
-      background-color: var(--accent-cyan-soft);
-      padding: 0.2rem 0.55rem;
-      border-radius: var(--radius-sm);
-    }
-
-    .spec-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* ==========================================================================
-       7. 3-CARD PROJECTS GRID
-       ========================================================================== */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem;
-      overflow: hidden;
-      transition: var(--transition-smooth);
-    }
-
-    /* Subtle top accent bar on hover */
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-amber), var(--accent-cyan));
-      opacity: 0;
-      transition: opacity 0.28s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      background-color: #151e31;
-      border-color: var(--border-highlight);
-      box-shadow:
-        0 18px 36px -12px rgba(0, 0, 0, 0.65),
-        0 0 24px rgba(56, 189, 248, 0.08);
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-    }
-
-    .card-index {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--text-dim);
-    }
-
-    .card-badge {
-      font-family: var(--font-mono);
+    .field-label {
       font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.6rem;
-      border-radius: var(--radius-pill);
-    }
-
-    .badge-amber {
-      background-color: var(--accent-amber-soft);
-      color: var(--accent-amber);
-      border: 1px solid rgba(245, 158, 11, 0.25);
-    }
-
-    .badge-cyan {
-      background-color: var(--accent-cyan-soft);
-      color: var(--accent-cyan);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-    }
-
-    .badge-slate {
-      background-color: rgba(148, 163, 184, 0.12);
-      color: var(--text-secondary);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-    }
-
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: 0.75rem;
-      line-height: 1.3;
-    }
-
-    .card-description {
-      font-size: 0.92rem;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 1.75rem;
     }
 
-    .card-footer {
-      margin-top: auto;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--border-subtle);
+    .passcode-input-row {
       display: flex;
-      flex-direction: column;
-      gap: 1.15rem;
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
       gap: 0.45rem;
     }
 
-    .card-tag {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
+    .mini-action-btns {
+      display: flex;
+      gap: 0.35rem;
+    }
+
+    .mini-btn {
+      padding: 0.22rem 0.5rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
       color: var(--text-secondary);
-      background-color: var(--bg-base);
-      border: 1px solid var(--border-subtle);
-      padding: 0.22rem 0.55rem;
-      border-radius: var(--radius-sm);
+      letter-spacing: 0.06em;
     }
 
-    .card-action {
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      transition: color 0.2s ease;
-    }
-
-    .card-arrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background-color: var(--bg-surface-elevated);
-      color: var(--text-primary);
-      transition: var(--transition-smooth);
-    }
-
-    .project-card:hover .card-action {
-      color: var(--accent-amber);
-    }
-
-    .project-card:hover .card-arrow {
-      background-color: var(--accent-amber);
-      color: #0b0f17;
-      transform: translateX(4px);
-    }
-
-    /* ==========================================================================
-       8. CONTACT & FOOTER SECTION
-       ========================================================================== */
-    .contact-section {
-      padding: 5.5rem 0 3.5rem;
-    }
-
-    .contact-card {
-      background: linear-gradient(145deg, var(--bg-surface) 0%, #0e1420 100%);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      padding: 3rem;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .contact-heading {
-      font-size: clamp(1.75rem, 3.5vw, 2.35rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.85rem;
-    }
-
-    .contact-text {
-      color: var(--text-muted);
-      font-size: 1rem;
-      max-width: 480px;
-      margin-bottom: 1.75rem;
-    }
-
-    .email-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.95rem 1.45rem;
-      background-color: var(--bg-base);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-md);
-      font-family: var(--font-mono);
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      transition: var(--transition-smooth);
-    }
-
-    .email-link:hover {
+    .mini-btn:hover {
       border-color: var(--accent-amber);
-      color: var(--accent-amber);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(245, 158, 11, 0.14);
+      color: var(--accent-amber-bright);
     }
 
-    .social-links {
+    .allowed-tracks-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+      background-color: var(--bg-panel);
+      border: 1px solid var(--border-grid);
+      padding: 0.65rem;
+    }
+
+    .track-checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 0.25rem 0.35rem;
+    }
+
+    .track-checkbox-label:hover {
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+    }
+
+    .track-checkbox-label input[type="checkbox"] {
+      accent-color: var(--accent-amber);
+      width: 14px;
+      height: 14px;
+    }
+
+    .admin-submit-row {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .active-keys-section {
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      gap: 0.6rem;
     }
 
-    .social-link-item {
+    .key-record-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 1.25rem;
-      background-color: var(--bg-base);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-md);
-      font-family: var(--font-mono);
-      font-size: 0.84rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--text-secondary);
-      transition: var(--transition-smooth);
-    }
-
-    .social-link-item:hover {
-      background-color: var(--bg-surface-elevated);
-      border-color: var(--accent-cyan);
-      color: var(--text-primary);
-      transform: translateX(5px);
-    }
-
-    .social-arrow {
-      color: var(--text-dim);
-      transition: transform 0.25s ease, color 0.25s ease;
-    }
-
-    .social-link-item:hover .social-arrow {
-      color: var(--accent-cyan);
-      transform: translate(3px, -3px);
-    }
-
-    .footer-bottom {
-      margin-top: 3.5rem;
-      padding-top: 1.75rem;
-      border-top: 1px solid var(--border-subtle);
-      display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--text-dim);
+      gap: 0.75rem;
+      padding: 0.75rem 0.95rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-grid);
     }
 
-    /* ==========================================================================
-       9. SUBTLE TOAST NOTIFICATION (FOR VAULT / INTERACTIVE PREVIEWS)
-       ========================================================================== */
-    .toast {
+    .key-record-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .key-recipient {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .key-code-tag {
+      font-size: 0.7rem;
+      color: var(--accent-amber-bright);
+      letter-spacing: 0.06em;
+    }
+
+    .key-record-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Toast Notification */
+    .sys-toast {
       position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      z-index: 200;
-      background-color: var(--bg-surface-elevated);
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 900;
+      padding: 0.75rem 1.1rem;
+      background-color: var(--bg-card);
       border: 1px solid var(--accent-amber);
       color: var(--text-primary);
-      padding: 0.9rem 1.25rem;
-      border-radius: var(--radius-md);
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75);
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.55rem;
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(12px);
       pointer-events: none;
-      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: all 0.22s ease;
     }
 
-    .toast.visible {
+    .sys-toast.show {
       opacity: 1;
       transform: translateY(0);
     }
 
     /* ==========================================================================
-       10. RESPONSIVE MEDIA QUERIES
+       8. RESPONSIVE ADAPTATIONS
        ========================================================================== */
-    @media (max-width: 960px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 980px) {
+      .cockpit-grid {
+        grid-template-columns: 1fr;
       }
 
-      .about-layout,
-      .contact-card {
-        grid-template-columns: 1fr;
+      .left-column {
+        border-right: none;
+        border-bottom: 1px solid var(--border-grid);
       }
     }
 
-    @media (max-width: 720px) {
-      .status-badge {
+    @media (max-width: 680px) {
+      .topbar {
+        grid-template-columns: 1fr auto;
+      }
+
+      .topbar-telemetry {
         display: none;
       }
 
-      .nav-links {
-        gap: 1.15rem;
+      .brand-hero-block,
+      .turbo-module,
+      .archive-header,
+      .deck-panel,
+      .track-row,
+      .dir-item {
+        padding-left: 1.15rem;
+        padding-right: 1.15rem;
       }
 
-      .hero {
-        padding: 4.25rem 0 3.75rem;
+      .track-row {
+        grid-template-columns: 34px 1fr auto;
       }
 
-      .projects-grid {
-        grid-template-columns: 1fr;
+      .track-bpm-tag {
+        display: none;
       }
 
-      .contact-card {
-        padding: 2rem 1.5rem;
-      }
-
-      .telemetry-metrics {
-        gap: 1.25rem;
+      .vault-unlock-form {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ======================================================================
-       STICKY NAVIGATION BAR
-       ====================================================================== -->
-  <header class="navbar">
-    <div class="container navbar-inner">
-      <a href="#top" class="brand-link" aria-label="ANTILAG Home">
-        <span>SYS <span class="brand-slash">//</span> ANTILAG.UK</span>
+  <div id="app-shell" class="app-shell">
+    <!-- ====================================================================
+         TOP SYSTEM TELEMETRY BAR
+         ==================================================================== -->
+    <header class="topbar">
+      <a href="#top" id="reset-home-btn" class="topbar-brand" title="Reset System View">
+        <span>SYS <span class="slash">//</span> ANTILAG.UK</span>
       </a>
 
-      <div class="status-badge" aria-label="System status">
-        <span class="status-dot"></span>
-        <span>175 BPM &bull; BOOKINGS OPEN</span>
+      <div class="topbar-telemetry" aria-label="System Telemetry">
+        <div class="tele-item">
+          <span class="tele-label">LOC //</span>
+          <span class="tele-val">BIRMINGHAM, UK</span>
+        </div>
+        <div class="tele-item">
+          <span class="tele-label">TEMPO //</span>
+          <span class="tele-val">175 BPM</span>
+        </div>
+        <button type="button" id="top-booking-trigger" class="tele-booking-btn" title="Open Bookings & Contact">
+          <span class="status-dot"></span>
+          <span>STATUS // BOOKINGS OPEN</span>
+        </button>
       </div>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+      <button type="button" id="open-vault-btn" class="topbar-vault-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span id="topbar-vault-label">DUBPLATE VAULT</span>
+      </button>
+    </header>
 
-  <main id="top">
     <!-- ====================================================================
-         HERO SECTION
+         MAIN SPLIT-GRID COCKPIT VIEWPORT
          ==================================================================== -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <!-- Telemetry Readout Tags -->
-            <div class="telemetry-strip">
-              <span class="telemetry-tag">
-                <span class="tag-accent-amber">LOC //</span> BIRMINGHAM, UK
-              </span>
-              <span class="telemetry-tag">
-                <span class="tag-accent-cyan">TEMPO //</span> 175 BPM
-              </span>
-              <span class="telemetry-tag">
-                <span class="tag-accent-amber">BOOST //</span> 2.2 BAR
-              </span>
+    <main id="top" class="cockpit-grid">
+
+      <!-- ==================================================================
+           LEFT COLUMN: IDENTITY, INDEX DIRECTORY & TURBO BOOST GAUGE
+           ================================================================== -->
+      <section class="left-column">
+        <div>
+          <!-- Brand Header Block -->
+          <div class="brand-hero-block">
+            <div class="brand-meta-row">
+              <span class="snippet-badge">[SNIPPET] // AUDIO ENGINE</span>
+              <span id="uk-live-clock" class="uk-clock-readout">UK 00:00:00 GMT</span>
             </div>
 
-            <!-- Main Industrial Headline -->
-            <h1 class="hero-title">
-              ANTILAG<span class="hero-title-cursor" aria-hidden="true"></span>
+            <h1 class="giant-wordmark">
+              ANTILAG<span class="wordmark-cursor" aria-hidden="true"></span>
             </h1>
 
-            <p class="hero-subtitle">
-              Birmingham UK Drum &amp; Bass Producer, Jungle Engineer &amp; Sound Designer.
-            </p>
+            <div class="brand-subline">
+              <span>DRUM &amp; BASS // JUNGLE // DUBPLATES</span>
+              <span>&copy; 2026 ANTILAG</span>
+            </div>
+          </div>
 
-            <p class="hero-description">
-              High-pressure 175 BPM breakbeat architecture, custom low-end synthesis, and raw dubplate pressure engineered for UK sound systems and late-night club rigs.
-            </p>
+          <!-- Numbered Social & Booking Directory (01 - 04) -->
+          <nav class="directory-nav" aria-label="Artist Directory">
+            <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer" class="dir-item">
+              <span class="dir-item-left">
+                <span class="dir-index">01</span>
+                <span class="dir-label">SOUNDCLOUD</span>
+              </span>
+              <span class="dir-arrow">&#8599;</span>
+            </a>
 
-            <!-- Primary CTA Buttons -->
-            <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">
-                <span>Explore Releases</span>
-                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="#contact" class="btn btn-secondary">
-                <span>Bookings &amp; Contact</span>
-              </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="dir-item">
+              <span class="dir-item-left">
+                <span class="dir-index">02</span>
+                <span class="dir-label">INSTAGRAM</span>
+              </span>
+              <span class="dir-arrow">&#8599;</span>
+            </a>
+
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="dir-item">
+              <span class="dir-item-left">
+                <span class="dir-index">03</span>
+                <span class="dir-label">TIKTOK</span>
+              </span>
+              <span class="dir-arrow">&#8599;</span>
+            </a>
+
+            <button type="button" id="dir-booking-btn" class="dir-item">
+              <span class="dir-item-left">
+                <span class="dir-index">04</span>
+                <span class="dir-label">BOOKINGS // CONTACT</span>
+              </span>
+              <span class="dir-arrow">&#8594;</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Interactive Turbo Boost / Antilag Launch Telemetry Gauge -->
+        <div class="turbo-module" aria-label="Turbo Boost Telemetry Gauge">
+          <div class="turbo-header">
+            <span class="turbo-title">
+              <span>MANIFOLD PRESSURE // ANTILAG ECU</span>
+            </span>
+            <button type="button" id="sfx-toggle-btn" class="sfx-toggle-btn active" title="Toggle Turbo Spool & Exhaust Antilag SFX">
+              SFX: ON
+            </button>
+          </div>
+
+          <div class="turbo-readout-row">
+            <div class="boost-digital">
+              <span id="boost-number" class="boost-number">0.00</span>
+              <span class="boost-unit">BAR</span>
+            </div>
+            <div id="turbo-status-pill" class="turbo-status-pill">
+              IDLE // READY
+            </div>
+          </div>
+
+          <div class="boost-meter-wrap">
+            <div id="boost-segments" class="boost-segments" aria-hidden="true"></div>
+            <div class="boost-scale">
+              <span>0.0 BAR</span>
+              <span>0.8 BAR</span>
+              <span>1.5 BAR</span>
+              <span>2.2 BAR MAX</span>
+            </div>
+          </div>
+
+          <button type="button" id="spool-trigger-btn" class="spool-trigger-btn">
+            <span>HOLD TO SPOOL // ANTILAG LAUNCH</span>
+          </button>
+          <div class="spool-hint">PRESS &amp; HOLD BUTTON OR HOLD [SPACEBAR] TO BUILD BOOST</div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           RIGHT COLUMN: AUDIO ARCHIVE // PUBLIC TRACKS & SYNTH ENGINE
+           ================================================================== -->
+      <section class="right-column" aria-label="Audio Archive">
+        <div class="archive-header">
+          <div class="archive-title">
+            <span class="dot-amber"></span>
+            <span>AUDIO ARCHIVE // PUBLIC TRACKS</span>
+          </div>
+          <span id="archive-counter" class="archive-counter">TRACKS 04</span>
+        </div>
+
+        <!-- Active Deck & Real-Time Waveform Visualizer -->
+        <div class="deck-panel">
+          <div class="deck-top-meta">
+            <div class="deck-now-playing">
+              <span id="deck-state-label" class="deck-state-label">DECK A // STANDBY</span>
+              <h2 id="deck-track-title" class="deck-track-title">01 // SPOOLING TURBO (VIP)</h2>
+            </div>
+            <div class="deck-badges">
+              <span id="deck-bpm-badge" class="deck-pill">175 BPM</span>
+              <span id="deck-key-badge" class="deck-pill">F MIN</span>
+              <span id="deck-type-badge" class="deck-pill">PUBLIC MASTER</span>
+            </div>
+          </div>
+
+          <div id="waveform-container" class="waveform-container" title="Click anywhere on waveform to scrub">
+            <canvas id="waveform-canvas"></canvas>
+          </div>
+
+          <div class="deck-controls-row">
+            <div class="transport-buttons">
+              <button type="button" id="prev-track-btn" class="ctrl-btn" title="Previous Track">&#9664;&#9664;</button>
+              <button type="button" id="play-pause-btn" class="ctrl-btn play-primary">&#9654; PLAY</button>
+              <button type="button" id="next-track-btn" class="ctrl-btn" title="Next Track">&#9654;&#9654;</button>
+            </div>
+
+            <div class="time-and-vol">
+              <span id="time-readout" class="time-readout">0:00 / 2:44</span>
+              <label class="vol-control">
+                <span>VOL</span>
+                <input type="range" id="master-volume" class="vol-slider" min="0" max="1" step="0.02" value="0.82" />
+              </label>
             </div>
           </div>
         </div>
 
-        <!-- Live Telemetry Strip -->
-        <div class="telemetry-panel" aria-label="Audio engine telemetry">
-          <div class="telemetry-metrics">
-            <div class="metric-item">
-              <span class="metric-label">SUB-BASS FUND.</span>
-              <span class="metric-value">41.2 Hz (E1)</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-label">MASTERING SPEC</span>
-              <span class="metric-value">24-BIT / 48 KHZ WAV</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-label">ORIGIN NODE</span>
-              <span class="metric-value" id="uk-clock">52.4862&deg; N, 1.8904&deg; W</span>
-            </div>
+        <!-- Tracklist Rows -->
+        <div id="public-tracklist" class="tracklist-container"></div>
+
+        <div class="archive-footer-note">
+          <span>WEB AUDIO 175 BPM PROCEDURAL DNB SYNTH ENGINE</span>
+          <span>24-BIT / 48 KHZ TELEMETRY STREAM</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 1: SYS // DUBPLATE VAULT (LOCKED & UNLOCKED + ADMIN // KEYS)
+       ====================================================================== -->
+  <div id="vault-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="vault-modal-title">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h2 id="vault-modal-title" class="modal-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>SYS // DUBPLATE VAULT</span>
+        </h2>
+        <button type="button" id="close-vault-btn" class="modal-close-btn" aria-label="Close Vault">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- VIEW A: LOCKED STATE -->
+        <div id="vault-locked-view">
+          <p class="vault-subtitle" style="margin-bottom: 1rem;">
+            RESTRICTED AUDIO ARCHIVE. ENTER ACCESS PASSCODE TO STREAM &amp; DOWNLOAD UNRELEASED DUBPLATES.
+          </p>
+
+          <form id="vault-unlock-form" class="vault-unlock-form">
+            <input
+              type="text"
+              id="vault-passcode-input"
+              class="sys-input"
+              placeholder="Vault passcode"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button type="submit" class="sys-btn-amber">UNLOCK</button>
+          </form>
+
+          <p id="vault-error-msg" class="vault-error-msg" style="margin-top: 0.65rem;">
+            ACCESS DENIED // INVALID OR REVOKED PASSCODE
+          </p>
+
+          <div class="demo-keys-bar" style="margin-top: 1.15rem;">
+            <span>QUICK TEST KEYS:</span>
+            <button type="button" class="demo-chip" data-fill-key="175VIP">DEMO KEY: 175VIP</button>
+            <button type="button" class="demo-chip" data-fill-key="ADMIN175">ADMIN KEY: ADMIN175</button>
+          </div>
+        </div>
+
+        <!-- VIEW B: UNLOCKED STATE -->
+        <div id="vault-unlocked-view" style="display: none; flex-direction: column; gap: 1.1rem;">
+          <div class="vault-unlocked-bar">
+            <span class="access-granted-label">
+              <span class="status-dot"></span>
+              <span id="vault-grant-info">ACCESS GRANTED // RECIPIENT: VIP DJ</span>
+            </span>
+            <button type="button" id="lock-vault-btn" class="lock-vault-btn">LOCK</button>
           </div>
 
-          <div class="eq-bars" aria-hidden="true" title="Signal Active">
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
+          <div class="vault-tabs">
+            <div class="vault-tab-group">
+              <button type="button" id="tab-dubplates-btn" class="vault-tab-btn active">DUBPLATES</button>
+              <button type="button" id="tab-admin-btn" class="vault-tab-btn">ADMIN // KEYS</button>
+            </div>
+            <span id="vault-key-role-tag" style="font-size: 0.68rem; color: var(--text-muted);">CLEARANCE: LEVEL 2</span>
+          </div>
+
+          <!-- TAB 1: DUBPLATES LIST -->
+          <div id="vault-tab-dubplates" class="dubplate-list"></div>
+
+          <!-- TAB 2: ADMIN // KEYS MANAGEMENT -->
+          <div id="vault-tab-admin" class="admin-panel" style="display: none;">
+            <form id="create-key-form" class="admin-form-box">
+              <div class="field-group">
+                <label class="field-label" for="admin-recipient-input">RECIPIENT / LABEL</label>
+                <input
+                  type="text"
+                  id="admin-recipient-input"
+                  class="sys-input"
+                  placeholder="e.g. Critical Music, Hospital, DJ Hype"
+                  required
+                />
+              </div>
+
+              <div class="field-group">
+                <div class="field-label-row">
+                  <label class="field-label" for="admin-passcode-input">PASSCODE</label>
+                  <div class="mini-action-btns">
+                    <button type="button" id="admin-gen-code-btn" class="mini-btn">GEN</button>
+                    <button type="button" id="admin-copy-code-btn" class="mini-btn">COPY</button>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  id="admin-passcode-input"
+                  class="sys-input"
+                  placeholder="AL-XXXX-VIP"
+                  required
+                />
+              </div>
+
+              <div class="field-group">
+                <div class="field-label-row">
+                  <span class="field-label">ALLOWED TRACKS</span>
+                  <div class="mini-action-btns">
+                    <button type="button" id="admin-select-all-btn" class="mini-btn">ALL</button>
+                    <button type="button" id="admin-select-none-btn" class="mini-btn">NONE</button>
+                  </div>
+                </div>
+                <div id="admin-tracks-checklist" class="allowed-tracks-grid"></div>
+              </div>
+
+              <div class="admin-submit-row">
+                <button type="submit" class="sys-btn-amber" style="flex: 1;">CREATE ACCESS KEY</button>
+                <button type="button" id="admin-cancel-btn" class="sys-btn-secondary">CANCEL</button>
+              </div>
+            </form>
+
+            <div class="active-keys-section">
+              <div class="field-label" id="active-keys-count">ACTIVE PASSCODES (0)</div>
+              <div id="active-keys-list" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- ====================================================================
-         ABOUT SECTION
-         ==================================================================== -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-kicker">01 // SYSTEM OVERVIEW</span>
-          <h2 class="section-title">Precision Breakbeats &amp; Raw Turbo Pressure</h2>
-        </div>
-
-        <div class="about-layout">
-          <div class="about-copy">
-            <p>
-              Operating out of <span class="about-highlight">Birmingham, UK</span>, <span class="about-highlight">ANTILAG</span> merges the mechanical tension of motorsport telemetry with the visceral weight of underground UK drum &amp; bass and jungle.
-            </p>
-            <p>
-              Every production is built from the ground up with surgical transient shaping, saturated analog distortion, and heavyweight sub-bass movement—designed specifically to hold clarity and punch on large-format club sound systems at 175 BPM.
-            </p>
-            <p>
-              From private VIP dubplates spun on warehouse rigs to official digital releases and high-octane club sets, ANTILAG delivers uncompromising sonic engineering without filler.
-            </p>
-          </div>
-
-          <div class="specs-list">
-            <div class="spec-card">
-              <div class="spec-header">
-                <h3 class="spec-title">DnB &amp; Jungle Production</h3>
-                <span class="spec-code">172–178 BPM</span>
-              </div>
-              <p class="spec-desc">
-                Razor-sharp chopped breaks, neuro-tech basslines, and dark atmospheric sound design built for maximum dancefloor impact.
-              </p>
-            </div>
-
-            <div class="spec-card">
-              <div class="spec-header">
-                <h3 class="spec-title">Dubplate Mastering &amp; VIPs</h3>
-                <span class="spec-code">24-BIT WAV</span>
-              </div>
-              <p class="spec-desc">
-                Club-ready loudness, phase-aligned sub harmonics, and bespoke VIP edits tailored for DJs and independent record labels.
-              </p>
-            </div>
-
-            <div class="spec-card">
-              <div class="spec-header">
-                <h3 class="spec-title">Live DJ Sets &amp; Club Rigs</h3>
-                <span class="spec-code">UK / EU</span>
-              </div>
-              <p class="spec-desc">
-                Fast-paced, multi-deck mixing blending unreleased dubplates, classic jungle rollers, and heavy contemporary drum &amp; bass.
-              </p>
-            </div>
-          </div>
-        </div>
+  <!-- ======================================================================
+       MODAL 2: BOOKINGS // CONTACT DIRECT UPLINK
+       ====================================================================== -->
+  <div id="booking-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+    <div class="modal-window" style="max-width: 540px;">
+      <div class="modal-header">
+        <h2 id="booking-modal-title" class="modal-title">
+          <span class="status-dot"></span>
+          <span>SYS // BOOKINGS &amp; DIRECT CONTACT</span>
+        </h2>
+        <button type="button" id="close-booking-btn" class="modal-close-btn" aria-label="Close Bookings">&times;</button>
       </div>
-    </section>
 
-    <!-- ====================================================================
-         3-CARD PROJECTS GRID
-         ==================================================================== -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-kicker">02 // RELEASES &amp; SYSTEMS</span>
-          <h2 class="section-title">Featured Audio &amp; Live Archives</h2>
+      <div class="modal-body">
+        <p class="vault-subtitle">
+          BIRMINGHAM, UK &bull; AVAILABLE FOR UK/EU CLUB DATES, FESTIVAL SETS, GUEST MIXES &amp; DUBPLATE REQUESTS.
+        </p>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.85rem 1rem; background: var(--bg-obsidian); border: 1px solid var(--border-grid);">
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent-amber-bright);">bookings@antilag.uk</span>
+          <button type="button" id="copy-booking-email-btn" class="sys-btn-secondary">COPY EMAIL</button>
         </div>
 
-        <div class="projects-grid">
-          <!-- Card 1: Dubplate Vault -->
-          <article class="project-card">
-            <div>
-              <div class="card-top">
-                <span class="card-index">PRJ // 01</span>
-                <span class="card-badge badge-amber">RESTRICTED ACCESS</span>
-              </div>
-              <h3 class="card-title">DUBPLATE VAULT</h3>
-              <p class="card-description">
-                Restricted audio archive &amp; private label portal featuring unreleased VIPs, stems, and passcode-gated dubplates reserved for select DJs, promoters, and A&amp;R teams.
-              </p>
-            </div>
-
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="card-tag">UNRELEASED VIPS</span>
-                <span class="card-tag">STEMS</span>
-                <span class="card-tag">LABEL PORTAL</span>
-              </div>
-              <a href="https://antilag.uk" target="_blank" rel="noopener noreferrer" class="card-action" data-toast="Opening ANTILAG Dubplate Vault portal...">
-                <span>REQUEST / ENTER VAULT</span>
-                <span class="card-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 2: Audio Archive // Public Tracks -->
-          <article class="project-card">
-            <div>
-              <div class="card-top">
-                <span class="card-index">PRJ // 02</span>
-                <span class="card-badge badge-cyan">STREAMING LIVE</span>
-              </div>
-              <h3 class="card-title">AUDIO ARCHIVE // PUBLIC TRACKS</h3>
-              <p class="card-description">
-                Complete catalog of released 175 BPM singles, EPs, bootlegs, and free sound system downloads streaming across SoundCloud and major digital platforms.
-              </p>
-            </div>
-
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="card-tag">175 BPM</span>
-                <span class="card-tag">SINGLES &amp; EPS</span>
-                <span class="card-tag">FREE DOWNLOADS</span>
-              </div>
-              <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer" class="card-action" data-toast="Launching ANTILAG SoundCloud catalog...">
-                <span>STREAM CATALOG</span>
-                <span class="card-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 3: Spooling Turbo // Live Rig -->
-          <article class="project-card">
-            <div>
-              <div class="card-top">
-                <span class="card-index">PRJ // 03</span>
-                <span class="card-badge badge-slate">BIRMINGHAM // UK</span>
-              </div>
-              <h3 class="card-title">SPOOLING TURBO // LIVE RIG</h3>
-              <p class="card-description">
-                High-energy club sets, hardware-driven live dub mixes, and recorded sound system sessions originating from Birmingham’s underground bass circuit.
-              </p>
-            </div>
-
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="card-tag">CLUB SETS</span>
-                <span class="card-tag">LIVE DUB MIXES</span>
-                <span class="card-tag">SOUND SYSTEM</span>
-              </div>
-              <a href="#contact" class="card-action" data-toast="Navigating to live booking inquiries...">
-                <span>BOOK LIVE SET</span>
-                <span class="card-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         CONTACT & SOCIAL LINKS SECTION
-         ==================================================================== -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="contact-card">
-          <div>
-            <span class="section-kicker">03 // DIRECT UPLINK</span>
-            <h2 class="contact-heading">Bookings, Dubplates &amp; Label Inquiries</h2>
-            <p class="contact-text">
-              Available for UK &amp; European club bookings, guest mixes, remix commissions, and private dubplate requests. Direct transmission via email or official channels.
-            </p>
-            <a href="mailto:bookings@antilag.uk" class="email-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
-              <span>bookings@antilag.uk</span>
-            </a>
+        <form id="booking-inquiry-form" style="display: flex; flex-direction: column; gap: 0.85rem;">
+          <div class="field-group">
+            <label class="field-label" for="inq-name">PROMOTER / LABEL / NAME</label>
+            <input type="text" id="inq-name" class="sys-input" placeholder="Your name or organization" required />
           </div>
-
-          <div class="social-links" aria-label="Official Social Channels">
-            <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
-              <span>01 // SOUNDCLOUD</span>
-              <span class="social-arrow" aria-hidden="true">&#8599;</span>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
-              <span>02 // INSTAGRAM</span>
-              <span class="social-arrow" aria-hidden="true">&#8599;</span>
-            </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
-              <span>03 // TIKTOK</span>
-              <span class="social-arrow" aria-hidden="true">&#8599;</span>
-            </a>
+          <div class="field-group">
+            <label class="field-label" for="inq-email">RETURN EMAIL</label>
+            <input type="email" id="inq-email" class="sys-input" placeholder="you@domain.com" required />
           </div>
-        </div>
-
-        <footer class="footer-bottom">
-          <span>&copy; 2026 ANTILAG &mdash; ALL RIGHTS RESERVED</span>
-          <span>BIRMINGHAM, UNITED KINGDOM // 175 BPM</span>
-        </footer>
+          <div class="field-group">
+            <label class="field-label" for="inq-msg">TRANSMISSION DETAILS (DATE / VENUE / REQUEST)</label>
+            <textarea id="inq-msg" class="sys-input" rows="3" placeholder="Event date, city, set duration, or dubplate request..." required></textarea>
+          </div>
+          <button type="submit" class="sys-btn-amber">TRANSMIT BOOKING INQUIRY</button>
+        </form>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
-  <!-- Subtle Telemetry Toast Feedback -->
-  <div id="telemetry-toast" class="toast" role="status" aria-live="polite">
+  <!-- Telemetry Toast -->
+  <div id="sys-toast" class="sys-toast" role="status" aria-live="polite">
     <span class="status-dot"></span>
-    <span id="toast-message">SYS // READY</span>
+    <span id="sys-toast-text">SYS // READY</span>
   </div>
 
   <script>
-    // Minimal vanilla JS for subtle telemetry feedback & live Birmingham UK time readout
     (function () {
-      const clockEl = document.getElementById('uk-clock');
-      const toastEl = document.getElementById('telemetry-toast');
-      const toastMsgEl = document.getElementById('toast-message');
-      let toastTimeout;
+      'use strict';
 
-      function updateUKTime() {
-        if (!clockEl) return;
+      /* ======================================================================
+         1. TRACK CATALOG (PUBLIC ARCHIVE + RESTRICTED DUBPLATE VAULT)
+         ====================================================================== */
+      const PUBLIC_TRACKS = [
+        {
+          id: 'pub-01',
+          index: '01',
+          title: '01 // SPOOLING TURBO (VIP)',
+          subtitle: 'ANTILAG // BIRMINGHAM PRESSURE SERIES',
+          bpm: 175,
+          key: 'F MIN',
+          duration: 164,
+          type: 'PUBLIC MASTER',
+          isVault: false,
+          bassFreq: 43.65, // F1
+          patternSeed: 1
+        },
+        {
+          id: 'pub-02',
+          index: '02',
+          title: '02 // BIRMINGHAM STEEL',
+          subtitle: 'ANTILAG // HEAVY BREAKBEAT ROLLER',
+          bpm: 175,
+          key: 'E MIN',
+          duration: 192,
+          type: 'PUBLIC MASTER',
+          isVault: false,
+          bassFreq: 41.20, // E1
+          patternSeed: 2
+        },
+        {
+          id: 'pub-03',
+          index: '03',
+          title: '03 // WASTEGATE DUB',
+          subtitle: 'ANTILAG // SUB-LOW JUNGLE EDITION',
+          bpm: 175,
+          key: 'G MIN',
+          duration: 178,
+          type: 'PUBLIC MASTER',
+          isVault: false,
+          bassFreq: 49.00, // G1
+          patternSeed: 3
+        },
+        {
+          id: 'pub-04',
+          index: '04',
+          title: '04 // 175 OVERDRIVE',
+          subtitle: 'ANTILAG // REDLINE NEURO MIX',
+          bpm: 175,
+          key: 'D# MIN',
+          duration: 155,
+          type: 'PUBLIC MASTER',
+          isVault: false,
+          bassFreq: 38.89, // D#1
+          patternSeed: 4
+        }
+      ];
+
+      const VAULT_DUBPLATES = [
+        {
+          id: 'vip-01',
+          index: 'VIP-01',
+          title: 'VIP-01 // ANTILAG LAUNCH (2.2 BAR DUBPLATE)',
+          subtitle: 'UNRELEASED 24-BIT STUDIO MASTER // 2026',
+          bpm: 175,
+          key: 'F MIN',
+          duration: 214,
+          type: 'UNRELEASED DUBPLATE',
+          isVault: true,
+          bassFreq: 43.65,
+          patternSeed: 5
+        },
+        {
+          id: 'vip-02',
+          index: 'VIP-02',
+          title: 'VIP-02 // MIDLANDS AMEN PRESSURE',
+          subtitle: 'UNRELEASED JUNGLE TEKNO CUT // 2026',
+          bpm: 176,
+          key: 'E MIN',
+          duration: 198,
+          type: 'UNRELEASED DUBPLATE',
+          isVault: true,
+          bassFreq: 41.20,
+          patternSeed: 6
+        },
+        {
+          id: 'vip-03',
+          index: 'VIP-03',
+          title: 'VIP-03 // TURBO FLUTTER (DARKSIDE MIX)',
+          subtitle: 'DJ PROMO ONLY // DO NOT DISTRIBUTE',
+          bpm: 175,
+          key: 'C MIN',
+          duration: 226,
+          type: 'UNRELEASED DUBPLATE',
+          isVault: true,
+          bassFreq: 32.70,
+          patternSeed: 7
+        },
+        {
+          id: 'vip-04',
+          index: 'VIP-04',
+          title: 'VIP-04 // DIGBETH WAREHOUSE TEST',
+          subtitle: 'SOUND SYSTEM DUBPLATE // 2026',
+          bpm: 175,
+          key: 'F# MIN',
+          duration: 189,
+          type: 'UNRELEASED DUBPLATE',
+          isVault: true,
+          bassFreq: 46.25,
+          patternSeed: 8
+        }
+      ];
+
+      /* ======================================================================
+         2. PASSCODE STORAGE (LOCALSTORAGE PERSISTENCE)
+         ====================================================================== */
+      const STORAGE_KEY = 'antilag_vault_keys_v1';
+
+      const DEFAULT_KEYS = [
+        {
+          id: 'key-admin-root',
+          recipient: 'ANTILAG MASTER ADMIN',
+          code: 'ADMIN175',
+          isAdmin: true,
+          allowedTrackIds: VAULT_DUBPLATES.map((t) => t.id)
+        },
+        {
+          id: 'key-demo-vip',
+          recipient: 'VIP DJ // PROMO ACCESS',
+          code: '175VIP',
+          isAdmin: false,
+          allowedTrackIds: ['vip-01', 'vip-02', 'vip-03']
+        }
+      ];
+
+      function loadPasscodes() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_KEYS));
+            return [...DEFAULT_KEYS];
+          }
+          const parsed = JSON.parse(raw);
+          return Array.isArray(parsed) && parsed.length ? parsed : [...DEFAULT_KEYS];
+        } catch (e) {
+          return [...DEFAULT_KEYS];
+        }
+      }
+
+      function savePasscodes(keys) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(keys));
+        } catch (e) {
+          // Ignore storage quota issues
+        }
+      }
+
+      let passcodes = loadPasscodes();
+      let activeVaultSession = null;
+
+      /* ======================================================================
+         3. UTILITY: TOAST & LIVE UK GMT/BST CLOCK
+         ====================================================================== */
+      const toastEl = document.getElementById('sys-toast');
+      const toastTextEl = document.getElementById('sys-toast-text');
+      let toastTimer = null;
+
+      function showToast(message) {
+        toastTextEl.textContent = message;
+        toastEl.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toastEl.classList.remove('show');
+        }, 2800);
+      }
+
+      const ukClockEl = document.getElementById('uk-live-clock');
+      function updateUKClock() {
         try {
           const now = new Date();
-          const formatter = new Intl.DateTimeFormat('en-GB', {
+          const timeStr = new Intl.DateTimeFormat('en-GB', {
             timeZone: 'Europe/London',
             hour: '2-digit',
             minute: '2-digit',
             second: '2-digit',
             hour12: false
-          });
-          clockEl.textContent = 'UK // ' + formatter.format(now) + ' GMT';
-        } catch (err) {
-          clockEl.textContent = 'BIRMINGHAM // UK';
+          }).format(now);
+          const tzName = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Europe/London',
+            timeZoneName: 'short'
+          }).formatToParts(now).find((p) => p.type === 'timeZoneName')?.value || 'GMT';
+          ukClockEl.textContent = `UK ${timeStr} ${tzName}`;
+        } catch (e) {
+          ukClockEl.textContent = 'UK 175 BPM LIVE';
+        }
+      }
+      updateUKClock();
+      setInterval(updateUKClock, 1000);
+
+      /* ======================================================================
+         4. WEB AUDIO API: 175 BPM DRUM & BASS SYNTHESIZER + TURBO ANTILAG SFX
+         ====================================================================== */
+      let audioCtx = null;
+      let masterGain = null;
+      let analyser = null;
+
+      function ensureAudioContext() {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          audioCtx = new AudioContextClass();
+          masterGain = audioCtx.createGain();
+          masterGain.gain.value = parseFloat(document.getElementById('master-volume').value || 0.82);
+
+          analyser = audioCtx.createAnalyser();
+          analyser.fftSize = 128;
+
+          masterGain.connect(analyser);
+          analyser.connect(audioCtx.destination);
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
         }
       }
 
-      updateUKTime();
-      setInterval(updateUKTime, 1000);
+      // Drum & Bass Track Playback State
+      let currentTrack = PUBLIC_TRACKS[0];
+      let isPlaying = false;
+      let trackElapsed = 0;
+      let stepIndex = 0;
+      let stepIntervalId = null;
+      let progressIntervalId = null;
 
-      // Attach subtle telemetry toast notification to project card actions
-      document.querySelectorAll('[data-toast]').forEach(function (link) {
-        link.addEventListener('click', function () {
-          const msg = link.getAttribute('data-toast');
-          if (!msg || !toastEl || !toastMsgEl) return;
-          toastMsgEl.textContent = msg;
-          toastEl.classList.add('visible');
-          clearTimeout(toastTimeout);
-          toastTimeout = setTimeout(function () {
-            toastEl.classList.remove('visible');
-          }, 2600);
+      function triggerKick(time) {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(145, time);
+        osc.frequency.exponentialRampToValueAtTime(44, time + 0.085);
+
+        gain.gain.setValueAtTime(0.85, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.19);
+
+        osc.connect(gain);
+        gain.connect(masterGain);
+        osc.start(time);
+        osc.stop(time + 0.2);
+      }
+
+      function triggerSnare(time) {
+        // Punchy 200Hz body + filtered white noise snap
+        const osc = audioCtx.createOscillator();
+        const oscGain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(210, time);
+        osc.frequency.exponentialRampToValueAtTime(95, time + 0.07);
+        oscGain.gain.setValueAtTime(0.55, time);
+        oscGain.gain.exponentialRampToValueAtTime(0.001, time + 0.11);
+        osc.connect(oscGain);
+        oscGain.connect(masterGain);
+        osc.start(time);
+        osc.stop(time + 0.12);
+
+        const bufferSize = Math.floor(audioCtx.sampleRate * 0.14);
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'highpass';
+        filter.frequency.setValueAtTime(950, time);
+
+        const nGain = audioCtx.createGain();
+        nGain.gain.setValueAtTime(0.48, time);
+        nGain.gain.exponentialRampToValueAtTime(0.001, time + 0.14);
+
+        noise.connect(filter);
+        filter.connect(nGain);
+        nGain.connect(masterGain);
+        noise.start(time);
+      }
+
+      function triggerHat(time, accent) {
+        const bufferSize = Math.floor(audioCtx.sampleRate * 0.045);
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'highpass';
+        filter.frequency.setValueAtTime(6500, time);
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(accent ? 0.2 : 0.09, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.045);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(masterGain);
+        noise.start(time);
+      }
+
+      function triggerReeseBass(time, freq, dur) {
+        const osc1 = audioCtx.createOscillator();
+        const osc2 = audioCtx.createOscillator();
+        osc1.type = 'sawtooth';
+        osc2.type = 'sawtooth';
+        osc1.frequency.setValueAtTime(freq, time);
+        osc2.frequency.setValueAtTime(freq * 1.008, time); // Detuned Reese movement
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.Q.setValueAtTime(5.5, time);
+        filter.frequency.setValueAtTime(140, time);
+        filter.frequency.exponentialRampToValueAtTime(420, time + dur * 0.45);
+        filter.frequency.exponentialRampToValueAtTime(110, time + dur);
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.42, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + dur);
+
+        osc1.connect(filter);
+        osc2.connect(filter);
+        filter.connect(gain);
+        gain.connect(masterGain);
+
+        osc1.start(time);
+        osc2.start(time);
+        osc1.stop(time + dur + 0.02);
+        osc2.stop(time + dur + 0.02);
+      }
+
+      function scheduleStep(step, track) {
+        const now = audioCtx.currentTime;
+        const seed = track.patternSeed || 1;
+        const stepDur = (60 / track.bpm) / 4; // 16th note at 175 BPM (~85.7ms)
+
+        // Classic UK Two-Step / Jungle Breakbeat Pattern (16 steps)
+        const kickSteps = seed % 2 === 0 ? [0, 10] : [0, 10, 14];
+        const snareSteps = [4, 12];
+        const ghostSnareSteps = seed >= 3 ? [7, 9, 15] : [7, 15];
+
+        if (kickSteps.includes(step)) triggerKick(now);
+        if (snareSteps.includes(step)) triggerSnare(now);
+        if (ghostSnareSteps.includes(step) && step % 2 === 1) {
+          triggerHat(now, true);
+        } else {
+          triggerHat(now, step % 2 === 0);
+        }
+
+        // Rolling Sub/Reese Bassline
+        if (step === 0) {
+          triggerReeseBass(now, track.bassFreq, stepDur * 6);
+        } else if (step === 6) {
+          triggerReeseBass(now, track.bassFreq * 1.189, stepDur * 4);
+        } else if (step === 10) {
+          triggerReeseBass(now, track.bassFreq * 1.334, stepDur * 5);
+        }
+      }
+
+      function startPlayback() {
+        ensureAudioContext();
+        stopIntervalsOnly();
+        isPlaying = true;
+        updateDeckUI();
+
+        const sixteenthMs = (60 / currentTrack.bpm / 4) * 1000;
+        stepIntervalId = setInterval(() => {
+          scheduleStep(stepIndex % 16, currentTrack);
+          stepIndex++;
+        }, sixteenthMs);
+
+        progressIntervalId = setInterval(() => {
+          trackElapsed += 0.25;
+          if (trackElapsed >= currentTrack.duration) {
+            trackElapsed = 0;
+            playNextTrack();
+            return;
+          }
+          updateTimeReadout();
+        }, 250);
+      }
+
+      function stopIntervalsOnly() {
+        clearInterval(stepIntervalId);
+        clearInterval(progressIntervalId);
+        stepIntervalId = null;
+        progressIntervalId = null;
+      }
+
+      function pausePlayback() {
+        isPlaying = false;
+        stopIntervalsOnly();
+        updateDeckUI();
+      }
+
+      function togglePlayPause() {
+        if (isPlaying) {
+          pausePlayback();
+        } else {
+          startPlayback();
+        }
+      }
+
+      function selectAndPlayTrack(track) {
+        const isSame = currentTrack.id === track.id;
+        currentTrack = track;
+        if (!isSame) {
+          trackElapsed = 0;
+          stepIndex = 0;
+        }
+        startPlayback();
+        renderPublicTracks();
+        if (activeVaultSession) renderVaultDubplates();
+      }
+
+      function playNextTrack() {
+        const idx = PUBLIC_TRACKS.findIndex((t) => t.id === currentTrack.id);
+        const next = PUBLIC_TRACKS[(idx + 1) % PUBLIC_TRACKS.length];
+        selectAndPlayTrack(next);
+      }
+
+      function playPrevTrack() {
+        const idx = PUBLIC_TRACKS.findIndex((t) => t.id === currentTrack.id);
+        const prev = PUBLIC_TRACKS[(idx - 1 + PUBLIC_TRACKS.length) % PUBLIC_TRACKS.length];
+        selectAndPlayTrack(prev);
+      }
+
+      /* ======================================================================
+         5. DECK UI & REAL-TIME WAVEFORM VISUALIZER
+         ====================================================================== */
+      const deckStateLabel = document.getElementById('deck-state-label');
+      const deckTrackTitle = document.getElementById('deck-track-title');
+      const deckBpmBadge = document.getElementById('deck-bpm-badge');
+      const deckKeyBadge = document.getElementById('deck-key-badge');
+      const deckTypeBadge = document.getElementById('deck-type-badge');
+      const playPauseBtn = document.getElementById('play-pause-btn');
+      const timeReadoutEl = document.getElementById('time-readout');
+      const waveformCanvas = document.getElementById('waveform-canvas');
+      const waveformContainer = document.getElementById('waveform-container');
+
+      function formatTime(secs) {
+        const m = Math.floor(secs / 60);
+        const s = Math.floor(secs % 60);
+        return `${m}:${s < 10 ? '0' : ''}${s}`;
+      }
+
+      function updateTimeReadout() {
+        timeReadoutEl.textContent = `${formatTime(trackElapsed)} / ${formatTime(currentTrack.duration)}`;
+      }
+
+      function updateDeckUI() {
+        deckStateLabel.textContent = isPlaying ? 'DECK A // STREAMING LIVE' : 'DECK A // STANDBY';
+        deckTrackTitle.textContent = currentTrack.title;
+        deckBpmBadge.textContent = `${currentTrack.bpm} BPM`;
+        deckKeyBadge.textContent = currentTrack.key;
+        deckTypeBadge.textContent = currentTrack.type;
+        deckTypeBadge.classList.toggle('vip', Boolean(currentTrack.isVault));
+        playPauseBtn.innerHTML = isPlaying ? '&#10074;&#10074; PAUSE' : '&#9654; PLAY';
+        updateTimeReadout();
+        renderPublicTracks();
+      }
+
+      // Generate deterministic waveform peaks per track
+      function getWaveformPeaks(seed, count) {
+        const peaks = [];
+        for (let i = 0; i < count; i++) {
+          const x = Math.sin(i * 0.42 + seed * 3.1) * Math.cos(i * 0.17 - seed);
+          const envelope = i < 6 || i > count - 6 ? 0.38 : 0.88;
+          peaks.push(Math.max(0.14, Math.min(1, Math.abs(x) * envelope + 0.18)));
+        }
+        return peaks;
+      }
+
+      function drawWaveform() {
+        const rect = waveformContainer.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+          waveformCanvas.width = rect.width;
+          waveformCanvas.height = rect.height;
+        }
+        const ctx = waveformCanvas.getContext('2d');
+        const w = waveformCanvas.width;
+        const h = waveformCanvas.height;
+
+        ctx.clearRect(0, 0, w, h);
+
+        // Subtle center baseline
+        ctx.strokeStyle = '#1d222d';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, h / 2);
+        ctx.lineTo(w, h / 2);
+        ctx.stroke();
+
+        const barCount = Math.max(48, Math.floor(w / 6));
+        const peaks = getWaveformPeaks(currentTrack.patternSeed, barCount);
+        const progressRatio = Math.min(1, trackElapsed / currentTrack.duration);
+
+        let freqData = null;
+        if (isPlaying && analyser) {
+          freqData = new Uint8Array(analyser.frequencyBinCount);
+          analyser.getByteFrequencyData(freqData);
+        }
+
+        const barWidth = Math.max(2, (w / barCount) - 2);
+        for (let i = 0; i < barCount; i++) {
+          const x = i * (w / barCount);
+          const ratio = i / barCount;
+          let amp = peaks[i];
+
+          if (isPlaying && freqData) {
+            const bin = freqData[i % freqData.length] / 255;
+            amp = Math.min(1, amp * (0.72 + bin * 0.65));
+          }
+
+          const barH = amp * (h * 0.78);
+          const y = (h - barH) / 2;
+
+          if (ratio <= progressRatio) {
+            ctx.fillStyle = currentTrack.isVault ? '#10b981' : '#ff5500';
+          } else {
+            ctx.fillStyle = '#2d3546';
+          }
+          ctx.fillRect(x, y, barWidth, barH);
+        }
+
+        // Playhead line
+        const headX = progressRatio * w;
+        ctx.fillStyle = '#f4f4f6';
+        ctx.fillRect(headX, 0, 2, h);
+
+        requestAnimationFrame(drawWaveform);
+      }
+
+      waveformContainer.addEventListener('click', (e) => {
+        const rect = waveformContainer.getBoundingClientRect();
+        const clickRatio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        trackElapsed = clickRatio * currentTrack.duration;
+        updateTimeReadout();
+        if (!isPlaying) startPlayback();
+      });
+
+      playPauseBtn.addEventListener('click', togglePlayPause);
+      document.getElementById('next-track-btn').addEventListener('click', playNextTrack);
+      document.getElementById('prev-track-btn').addEventListener('click', playPrevTrack);
+      document.getElementById('master-volume').addEventListener('input', (e) => {
+        if (masterGain && audioCtx) {
+          masterGain.gain.setValueAtTime(parseFloat(e.target.value), audioCtx.currentTime);
+        }
+      });
+
+      /* ======================================================================
+         6. RENDER PUBLIC TRACKLIST
+         ====================================================================== */
+      const publicTracklistEl = document.getElementById('public-tracklist');
+
+      function renderPublicTracks() {
+        publicTracklistEl.innerHTML = '';
+        PUBLIC_TRACKS.forEach((track) => {
+          const isCurrent = currentTrack.id === track.id;
+          const row = document.createElement('div');
+          row.className = `track-row${isCurrent ? ' active' : ''}`;
+          row.innerHTML = `
+            <div class="track-play-icon">${isCurrent && isPlaying ? '&#10074;&#10074;' : '&#9654;'}</div>
+            <div class="track-info">
+              <div class="track-name">${track.title}</div>
+              <div class="track-sub">${track.subtitle}</div>
+            </div>
+            <span class="track-bpm-tag">${track.bpm} BPM</span>
+            <span class="track-dur">${formatTime(track.duration)}</span>
+          `;
+          row.addEventListener('click', () => {
+            if (isCurrent) {
+              togglePlayPause();
+            } else {
+              selectAndPlayTrack(track);
+            }
+          });
+          publicTracklistEl.appendChild(row);
+        });
+      }
+
+      /* ======================================================================
+         7. INTERACTIVE TURBO BOOST & ANTILAG LAUNCH GAUGE (0.00 -> 2.20 BAR)
+         ====================================================================== */
+      const appShell = document.getElementById('app-shell');
+      const boostNumberEl = document.getElementById('boost-number');
+      const turboStatusPill = document.getElementById('turbo-status-pill');
+      const boostSegmentsEl = document.getElementById('boost-segments');
+      const spoolTriggerBtn = document.getElementById('spool-trigger-btn');
+      const sfxToggleBtn = document.getElementById('sfx-toggle-btn');
+
+      // Build 22 LED segments (each represents 0.1 BAR up to 2.2 BAR)
+      const TOTAL_SEGMENTS = 22;
+      const segmentEls = [];
+      for (let i = 0; i < TOTAL_SEGMENTS; i++) {
+        const seg = document.createElement('div');
+        seg.className = 'boost-seg';
+        boostSegmentsEl.appendChild(seg);
+        segmentEls.push(seg);
+      }
+
+      let boostBar = 0.0;
+      let isSpooling = false;
+      let sfxEnabled = true;
+      let turboOsc = null;
+      let turboGain = null;
+      let lastBangTime = 0;
+
+      sfxToggleBtn.addEventListener('click', () => {
+        sfxEnabled = !sfxEnabled;
+        sfxToggleBtn.textContent = sfxEnabled ? 'SFX: ON' : 'SFX: OFF';
+        sfxToggleBtn.classList.toggle('active', sfxEnabled);
+        if (!sfxEnabled) stopTurboWhistle();
+      });
+
+      function startTurboWhistle() {
+        if (!sfxEnabled) return;
+        ensureAudioContext();
+        if (turboOsc) return;
+
+        turboOsc = audioCtx.createOscillator();
+        turboGain = audioCtx.createGain();
+        turboOsc.type = 'sine';
+        turboOsc.frequency.setValueAtTime(1400, audioCtx.currentTime);
+        turboGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+
+        turboOsc.connect(turboGain);
+        turboGain.connect(masterGain);
+        turboOsc.start();
+      }
+
+      function updateTurboWhistle(bar) {
+        if (!turboOsc || !turboGain || !audioCtx) return;
+        const now = audioCtx.currentTime;
+        const targetFreq = 1400 + (bar / 2.2) * 3400;
+        const targetGain = sfxEnabled && isSpooling ? 0.02 + (bar / 2.2) * 0.065 : 0.0001;
+        turboOsc.frequency.setTargetAtTime(targetFreq, now, 0.04);
+        turboGain.gain.setTargetAtTime(targetGain, now, 0.04);
+      }
+
+      function stopTurboWhistle() {
+        if (turboOsc) {
+          try {
+            turboOsc.stop();
+            turboOsc.disconnect();
+          } catch (e) {}
+          turboOsc = null;
+          turboGain = null;
+        }
+      }
+
+      function triggerAntilagExhaustBang() {
+        if (!sfxEnabled) return;
+        ensureAudioContext();
+        const now = audioCtx.currentTime;
+
+        // Sharp exhaust ignition crackle burst
+        const bufferSize = Math.floor(audioCtx.sampleRate * 0.09);
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.35));
+        }
+
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(650 + Math.random() * 500, now);
+        filter.Q.setValueAtTime(1.4, now);
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.32, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(masterGain);
+        noise.start(now);
+      }
+
+      function setSpoolState(active) {
+        isSpooling = active;
+        spoolTriggerBtn.classList.toggle('active', active);
+        if (active) {
+          startTurboWhistle();
+        } else {
+          appShell.classList.remove('limiter-active');
+        }
+      }
+
+      spoolTriggerBtn.addEventListener('mousedown', () => setSpoolState(true));
+      window.addEventListener('mouseup', () => {
+        if (isSpooling) setSpoolState(false);
+      });
+      spoolTriggerBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        setSpoolState(true);
+      }, { passive: false });
+      spoolTriggerBtn.addEventListener('touchend', () => setSpoolState(false));
+
+      // Spacebar hold support (when not typing in inputs)
+      window.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+          e.preventDefault();
+          if (!isSpooling) setSpoolState(true);
+        }
+      });
+
+      window.addEventListener('keyup', (e) => {
+        if (e.code === 'Space' && isSpooling) {
+          setSpoolState(false);
+        }
+      });
+
+      function updateBoostLoop(timestamp) {
+        if (isSpooling) {
+          boostBar = Math.min(2.2, boostBar + 0.042);
+          if (boostBar >= 2.12) {
+            // Antilag limiter oscillation & exhaust bangs
+            boostBar = 2.08 + Math.random() * 0.12;
+            appShell.classList.add('limiter-active');
+            if (timestamp - lastBangTime > 125) {
+              triggerAntilagExhaustBang();
+              lastBangTime = timestamp;
+            }
+          }
+        } else {
+          boostBar = Math.max(0.0, boostBar - 0.035);
+          if (boostBar === 0 && turboOsc) {
+            stopTurboWhistle();
+          }
+        }
+
+        updateTurboWhistle(boostBar);
+
+        // Update digital number & status badge
+        boostNumberEl.textContent = boostBar.toFixed(2);
+        boostNumberEl.classList.remove('spooling', 'redline');
+        turboStatusPill.classList.remove('spooling', 'antilag');
+
+        if (boostBar >= 2.05) {
+          boostNumberEl.classList.add('redline');
+          turboStatusPill.classList.add('antilag');
+          turboStatusPill.textContent = `ANTILAG ACTIVE // ${boostBar.toFixed(2)} BAR`;
+        } else if (boostBar > 0.05) {
+          boostNumberEl.classList.add('spooling');
+          turboStatusPill.classList.add('spooling');
+          turboStatusPill.textContent = 'SPOOLING TURBO';
+        } else {
+          turboStatusPill.textContent = 'IDLE // READY';
+        }
+
+        // Light up LED segments
+        const litCount = Math.round((boostBar / 2.2) * TOTAL_SEGMENTS);
+        for (let i = 0; i < TOTAL_SEGMENTS; i++) {
+          const seg = segmentEls[i];
+          seg.className = 'boost-seg';
+          if (i < litCount) {
+            if (i >= 17) seg.classList.add('lit-high');
+            else if (i >= 10) seg.classList.add('lit-mid');
+            else seg.classList.add('lit-low');
+          }
+        }
+
+        requestAnimationFrame(updateBoostLoop);
+      }
+
+      /* ======================================================================
+         8. SYS // DUBPLATE VAULT MODAL & ADMIN // KEYS SYSTEM
+         ====================================================================== */
+      const vaultModal = document.getElementById('vault-modal');
+      const openVaultBtn = document.getElementById('open-vault-btn');
+      const closeVaultBtn = document.getElementById('close-vault-btn');
+      const topbarVaultLabel = document.getElementById('topbar-vault-label');
+
+      const vaultLockedView = document.getElementById('vault-locked-view');
+      const vaultUnlockedView = document.getElementById('vault-unlocked-view');
+      const vaultUnlockForm = document.getElementById('vault-unlock-form');
+      const vaultPasscodeInput = document.getElementById('vault-passcode-input');
+      const vaultErrorMsg = document.getElementById('vault-error-msg');
+      const vaultGrantInfo = document.getElementById('vault-grant-info');
+      const vaultKeyRoleTag = document.getElementById('vault-key-role-tag');
+      const lockVaultBtn = document.getElementById('lock-vault-btn');
+
+      const tabDubplatesBtn = document.getElementById('tab-dubplates-btn');
+      const tabAdminBtn = document.getElementById('tab-admin-btn');
+      const vaultTabDubplates = document.getElementById('vault-tab-dubplates');
+      const vaultTabAdmin = document.getElementById('vault-tab-admin');
+
+      function openVaultModal() {
+        vaultModal.classList.add('open');
+        if (!activeVaultSession) {
+          vaultPasscodeInput.focus();
+        }
+      }
+
+      function closeVaultModal() {
+        vaultModal.classList.remove('open');
+      }
+
+      openVaultBtn.addEventListener('click', openVaultModal);
+      closeVaultBtn.addEventListener('click', closeVaultModal);
+      vaultModal.addEventListener('click', (e) => {
+        if (e.target === vaultModal) closeVaultModal();
+      });
+
+      // Quick fill demo keys
+      document.querySelectorAll('[data-fill-key]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          vaultPasscodeInput.value = btn.getAttribute('data-fill-key');
+          vaultPasscodeInput.focus();
         });
       });
+
+      function unlockVaultWithCode(rawCode) {
+        const normalized = rawCode.trim().toUpperCase();
+        const matched = passcodes.find((k) => k.code.toUpperCase() === normalized);
+
+        if (!matched) {
+          vaultErrorMsg.classList.add('visible');
+          return false;
+        }
+
+        vaultErrorMsg.classList.remove('visible');
+        activeVaultSession = matched;
+
+        vaultLockedView.style.display = 'none';
+        vaultUnlockedView.style.display = 'flex';
+        vaultGrantInfo.textContent = `ACCESS GRANTED // ${matched.recipient}`;
+        vaultKeyRoleTag.textContent = matched.isAdmin ? 'CLEARANCE: ROOT ADMIN' : `TRACKS UNLOCKED: ${matched.allowedTrackIds.length}`;
+
+        openVaultBtn.classList.add('unlocked');
+        topbarVaultLabel.textContent = 'VAULT // UNLOCKED';
+
+        // Show Admin tab for all unlocked sessions (matching antilag.uk's interactive Admin // Keys inspection)
+        switchVaultTab('dubplates');
+        renderVaultDubplates();
+        renderAdminKeyFormChecklist();
+        renderActivePasscodesList();
+        showToast(`VAULT UNLOCKED // WELCOME ${matched.recipient}`);
+        return true;
+      }
+
+      vaultUnlockForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        unlockVaultWithCode(vaultPasscodeInput.value);
+      });
+
+      lockVaultBtn.addEventListener('click', () => {
+        activeVaultSession = null;
+        vaultPasscodeInput.value = '';
+        vaultUnlockedView.style.display = 'none';
+        vaultLockedView.style.display = 'block';
+        openVaultBtn.classList.remove('unlocked');
+        topbarVaultLabel.textContent = 'DUBPLATE VAULT';
+        showToast('SYS // DUBPLATE VAULT LOCKED');
+      });
+
+      function switchVaultTab(tabName) {
+        const isDubplates = tabName === 'dubplates';
+        tabDubplatesBtn.classList.toggle('active', isDubplates);
+        tabAdminBtn.classList.toggle('active', !isDubplates);
+        vaultTabDubplates.style.display = isDubplates ? 'flex' : 'none';
+        vaultTabAdmin.style.display = isDubplates ? 'none' : 'flex';
+      }
+
+      tabDubplatesBtn.addEventListener('click', () => switchVaultTab('dubplates'));
+      tabAdminBtn.addEventListener('click', () => switchVaultTab('admin'));
+
+      // Generate real downloadable WAV file for dubplate download button
+      function downloadDubplateWav(track) {
+        ensureAudioContext();
+        const sampleRate = 22050;
+        const durationSec = 4; // 4-second high-impact dubplate preview loop WAV
+        const numSamples = sampleRate * durationSec;
+        const buffer = new ArrayBuffer(44 + numSamples * 2);
+        const view = new DataView(buffer);
+
+        function writeString(offset, str) {
+          for (let i = 0; i < str.length; i++) {
+            view.setUint8(offset + i, str.charCodeAt(i));
+          }
+        }
+
+        writeString(0, 'RIFF');
+        view.setUint32(4, 36 + numSamples * 2, true);
+        writeString(8, 'WAVE');
+        writeString(12, 'fmt ');
+        view.setUint32(16, 16, true);
+        view.setUint16(20, 1, true);
+        view.setUint16(22, 1, true);
+        view.setUint32(24, sampleRate, true);
+        view.setUint32(28, sampleRate * 2, true);
+        view.setUint16(32, 2, true);
+        view.setUint16(34, 16, true);
+        writeString(36, 'data');
+        view.setUint32(40, numSamples * 2, true);
+
+        for (let i = 0; i < numSamples; i++) {
+          const t = i / sampleRate;
+          const sub = Math.sin(2 * Math.PI * track.bassFreq * t) * 0.55;
+          const pulse = Math.sin(2 * Math.PI * (track.bpm / 60) * t) > 0 ? 1 : 0.4;
+          const sample = Math.max(-1, Math.min(1, sub * pulse));
+          view.setInt16(44 + i * 2, sample * 32767, true);
+        }
+
+        const blob = new Blob([buffer], { type: 'audio/wav' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `ANTILAG_${track.index}_175BPM_MASTER.wav`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast(`DOWNLOADING // ${track.index} (24-BIT WAV)`);
+      }
+
+      function renderVaultDubplates() {
+        if (!activeVaultSession) return;
+        vaultTabDubplates.innerHTML = '';
+
+        const allowed = VAULT_DUBPLATES.filter((t) =>
+          activeVaultSession.isAdmin || activeVaultSession.allowedTrackIds.includes(t.id)
+        );
+
+        if (allowed.length === 0) {
+          vaultTabDubplates.innerHTML = `
+            <div style="padding: 1.25rem; border: 1px solid var(--border-grid); color: var(--text-muted); font-size: 0.74rem;">
+              NO DUBPLATES ASSIGNED TO THIS PASSCODE.
+            </div>
+          `;
+          return;
+        }
+
+        allowed.forEach((track) => {
+          const isCurrent = currentTrack.id === track.id && isPlaying;
+          const item = document.createElement('div');
+          item.className = 'dubplate-item';
+          item.innerHTML = `
+            <div class="dubplate-meta">
+              <div class="dubplate-title">${track.title}</div>
+              <div class="dubplate-specs">${track.subtitle} &bull; ${track.bpm} BPM &bull; ${track.key}</div>
+            </div>
+            <div class="dubplate-actions">
+              <button type="button" class="sys-btn-secondary vault-stream-btn">
+                ${isCurrent ? '&#10074;&#10074; STREAMING' : '&#9654; STREAM'}
+              </button>
+              <button type="button" class="sys-btn-amber vault-dl-btn">.WAV</button>
+            </div>
+          `;
+
+          item.querySelector('.vault-stream-btn').addEventListener('click', () => {
+            if (currentTrack.id === track.id) {
+              togglePlayPause();
+            } else {
+              selectAndPlayTrack(track);
+            }
+            renderVaultDubplates();
+          });
+
+          item.querySelector('.vault-dl-btn').addEventListener('click', () => {
+            downloadDubplateWav(track);
+          });
+
+          vaultTabDubplates.appendChild(item);
+        });
+      }
+
+      /* ======================================================================
+         9. ADMIN // KEYS FORM & ACTIVE PASSCODES MANAGEMENT
+         ====================================================================== */
+      const adminRecipientInput = document.getElementById('admin-recipient-input');
+      const adminPasscodeInput = document.getElementById('admin-passcode-input');
+      const adminGenCodeBtn = document.getElementById('admin-gen-code-btn');
+      const adminCopyCodeBtn = document.getElementById('admin-copy-code-btn');
+      const adminSelectAllBtn = document.getElementById('admin-select-all-btn');
+      const adminSelectNoneBtn = document.getElementById('admin-select-none-btn');
+      const adminTracksChecklist = document.getElementById('admin-tracks-checklist');
+      const createKeyForm = document.getElementById('create-key-form');
+      const adminCancelBtn = document.getElementById('admin-cancel-btn');
+      const activeKeysCountEl = document.getElementById('active-keys-count');
+      const activeKeysListEl = document.getElementById('active-keys-list');
+
+      function generateRandomPasscode() {
+        const num = Math.floor(1000 + Math.random() * 9000);
+        const suffixes = ['VIP', 'DUB', '175', 'BHM'];
+        const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+        return `AL-${num}-${suffix}`;
+      }
+
+      adminGenCodeBtn.addEventListener('click', () => {
+        adminPasscodeInput.value = generateRandomPasscode();
+      });
+
+      adminCopyCodeBtn.addEventListener('click', () => {
+        if (!adminPasscodeInput.value.trim()) {
+          adminPasscodeInput.value = generateRandomPasscode();
+        }
+        navigator.clipboard?.writeText(adminPasscodeInput.value.trim());
+        showToast(`COPIED PASSCODE // ${adminPasscodeInput.value.trim()}`);
+      });
+
+      function renderAdminKeyFormChecklist() {
+        adminTracksChecklist.innerHTML = '';
+        VAULT_DUBPLATES.forEach((track) => {
+          const label = document.createElement('label');
+          label.className = 'track-checkbox-label';
+          label.innerHTML = `
+            <input type="checkbox" value="${track.id}" checked />
+            <span>${track.title}</span>
+          `;
+          adminTracksChecklist.appendChild(label);
+        });
+      }
+
+      adminSelectAllBtn.addEventListener('click', () => {
+        adminTracksChecklist.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+          cb.checked = true;
+        });
+      });
+
+      adminSelectNoneBtn.addEventListener('click', () => {
+        adminTracksChecklist.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+          cb.checked = false;
+        });
+      });
+
+      adminCancelBtn.addEventListener('click', () => {
+        adminRecipientInput.value = '';
+        adminPasscodeInput.value = '';
+        switchVaultTab('dubplates');
+      });
+
+      createKeyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const recipient = adminRecipientInput.value.trim().toUpperCase();
+        const code = adminPasscodeInput.value.trim().toUpperCase();
+        if (!recipient || !code) return;
+
+        const checkedIds = Array.from(
+          adminTracksChecklist.querySelectorAll('input[type="checkbox"]:checked')
+        ).map((cb) => cb.value);
+
+        const newKey = {
+          id: 'key-' + Date.now(),
+          recipient,
+          code,
+          isAdmin: false,
+          allowedTrackIds: checkedIds
+        };
+
+        passcodes.unshift(newKey);
+        savePasscodes(passcodes);
+        renderActivePasscodesList();
+
+        adminRecipientInput.value = '';
+        adminPasscodeInput.value = '';
+        showToast(`ACCESS KEY CREATED // ${code}`);
+      });
+
+      function renderActivePasscodesList() {
+        activeKeysCountEl.textContent = `ACTIVE PASSCODES (${passcodes.length})`;
+        activeKeysListEl.innerHTML = '';
+
+        passcodes.forEach((keyObj) => {
+          const card = document.createElement('div');
+          card.className = 'key-record-card';
+          card.innerHTML = `
+            <div class="key-record-info">
+              <span class="key-recipient">${keyObj.recipient}</span>
+              <span class="key-code-tag">CODE: ${keyObj.code} &bull; ${keyObj.isAdmin ? 'ALL TRACKS (ADMIN)' : `${keyObj.allowedTrackIds.length} TRACKS`}</span>
+            </div>
+            <div class="key-record-actions">
+              <button type="button" class="mini-btn copy-key-btn">COPY</button>
+              <button type="button" class="mini-btn test-key-btn">TEST KEY</button>
+              ${keyObj.id !== 'key-admin-root' ? '<button type="button" class="mini-btn revoke-key-btn" style="color: var(--accent-red);">REVOKE</button>' : ''}
+            </div>
+          `;
+
+          card.querySelector('.copy-key-btn').addEventListener('click', () => {
+            navigator.clipboard?.writeText(keyObj.code);
+            showToast(`COPIED // ${keyObj.code}`);
+          });
+
+          card.querySelector('.test-key-btn').addEventListener('click', () => {
+            unlockVaultWithCode(keyObj.code);
+          });
+
+          const revokeBtn = card.querySelector('.revoke-key-btn');
+          if (revokeBtn) {
+            revokeBtn.addEventListener('click', () => {
+              passcodes = passcodes.filter((k) => k.id !== keyObj.id);
+              savePasscodes(passcodes);
+              renderActivePasscodesList();
+              showToast(`REVOKED KEY // ${keyObj.code}`);
+            });
+          }
+
+          activeKeysListEl.appendChild(card);
+        });
+      }
+
+      /* ======================================================================
+         10. BOOKINGS & CONTACT MODAL
+         ====================================================================== */
+      const bookingModal = document.getElementById('booking-modal');
+      const topBookingTrigger = document.getElementById('top-booking-trigger');
+      const dirBookingBtn = document.getElementById('dir-booking-btn');
+      const closeBookingBtn = document.getElementById('close-booking-btn');
+      const copyBookingEmailBtn = document.getElementById('copy-booking-email-btn');
+      const bookingInquiryForm = document.getElementById('booking-inquiry-form');
+
+      function openBookingModal() {
+        bookingModal.classList.add('open');
+      }
+
+      function closeBookingModal() {
+        bookingModal.classList.remove('open');
+      }
+
+      topBookingTrigger.addEventListener('click', openBookingModal);
+      dirBookingBtn.addEventListener('click', openBookingModal);
+      closeBookingBtn.addEventListener('click', closeBookingModal);
+      bookingModal.addEventListener('click', (e) => {
+        if (e.target === bookingModal) closeBookingModal();
+      });
+
+      copyBookingEmailBtn.addEventListener('click', () => {
+        navigator.clipboard?.writeText('bookings@antilag.uk');
+        showToast('COPIED // bookings@antilag.uk');
+      });
+
+      bookingInquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        bookingInquiryForm.reset();
+        closeBookingModal();
+        showToast('TRANSMISSION SENT // BOOKINGS@ANTILAG.UK');
+      });
+
+      document.getElementById('reset-home-btn').addEventListener('click', () => {
+        closeVaultModal();
+        closeBookingModal();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* ======================================================================
+         11. INITIALIZE RENDER LOOPS
+         ====================================================================== */
+      renderPublicTracks();
+      updateDeckUI();
+      requestAnimationFrame(drawWaveform);
+      requestAnimationFrame(updateBoostLoop);
     })();
   </script>
 </body>
